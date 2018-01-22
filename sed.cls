@@ -1,3 +1,4 @@
+% kate: word-wrap off
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{sed}[2018/01/22 Standard REXUS/BEXUS Student Experiment
 Documentation (SED) report class]
@@ -112,6 +113,8 @@ Documentation (SED) report class]
 
 \RequirePackage[nameinlink]{cleveref}
 
+\RequirePackage{ifthen}
+
 %% page style
 \pagestyle{scrheadings}
 
@@ -183,6 +186,11 @@ Documentation (SED) report class]
   \def\@team{#1}
 }
 
+\def\@teamlogo{}
+\newcommand{\teamlogo}[1]{
+  \def\@teamlogo{#1}
+}
+
 \def\@experiment{Experiment}
 \newcommand{\experiment}[1]{
   \def\@experiment{#1}
@@ -218,9 +226,11 @@ Documentation (SED) report class]
 %% title page
 \renewcommand{\maketitle}{
  \thispagestyle{\titlepagestyle}
- \hfill\includegraphics[height = 40mm]{logo-rexus-bexus}
+ \hfill\includegraphics[height = 50mm]{logo-rexus-bexus}
+ \ifthenelse{\equal{\@teamlogo}{}}{}{\\
+ \hspace*{\fill}\includegraphics[height = 50mm]{\@teamlogo}\vspace*{-50mm}}
 
- \vspace*{10mm}
+ \vspace*{0mm}
  {\LARGE\textbf{\@title}}\\
  \textbf{Student Experiment Documentation}
 
@@ -248,7 +258,7 @@ Documentation (SED) report class]
  \vspace*{28.8pt}
  \begin{longtabu}[]{@{}lX[1,l]X[1,l]X[1,l]@{}}
   Version: & Issue Date: & Document Type: & Valid From: \\
-  \@version & \@issuedate & \@type & \@validdate \\
+  \textbf{\@version} & \textbf{\@issuedate} & \textbf{\@type} & \textbf{\@validdate} \\
  \end{longtabu}
 
  \vspace*{14.4pt}
