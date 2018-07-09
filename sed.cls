@@ -18,7 +18,7 @@ Documentation (SED) report class]
 % required packages
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
-\RequirePackage[english,ngerman]{babel}
+\RequirePackage[american,ngerman]{babel}
 
 % \PrerenderUnicode{ä}
 % \PrerenderUnicode{ö}
