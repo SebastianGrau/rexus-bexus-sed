@@ -1,7 +1,6 @@
 % kate: word-wrap off
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sed}[2018/01/22 Standard REXUS/BEXUS Student Experiment
-Documentation (SED) report class]
+\ProvidesClass{sed}[2018/08/20 Standard REXUS/BEXUS Student Experiment Documentation (SED) report class]
 
 
 % base class
@@ -201,25 +200,14 @@ Documentation (SED) report class]
   \def\@teammembers{#1}
 }
 
-\def\@creatorname{John Doe}
-\def\@creatorrole{Deer}
-\newcommand{\creator}[2]{
-  \def\@creatorname{#1}
-  \def\@creatorrole{#2}
+\def\@issuedby{John Doe}
+\newcommand{\issuedby}[1]{
+  \def\@issuedby{#1}
 }
 
-\def\@examinername{John Doe}
-\def\@examinerrole{Deer}
-\newcommand{\examiner}[2]{
-  \def\@examinername{#1}
-  \def\@examinerrole{#2}
-}
-
-\def\@releasename{John Doe}
-\def\@releaserole{Deer}
-\newcommand{\release}[2]{
-  \def\@releasename{#1}
-  \def\@releaserole{#2}
+\def\@approvedby{John Doe}
+\newcommand{\approvedby}[1]{
+  \def\@approvedby{#1}
 }
 
 
@@ -265,60 +253,13 @@ Documentation (SED) report class]
  {\fontsize{10}{12}\selectfont Issued by:}
 
  \vspace*{14.4pt}
- \textbf{Experiment Scientist}
+ \textbf{\@issuedby}
 
  \vspace*{14.4pt}
  {\fontsize{10}{12}\selectfont Approved by:}
 
  \vspace*{14.4pt}
- \textbf{Payload Manager}
- \newpage
- \cleardoubleemptypage
-}
-
-
-%% signature page
-\newcommand{\makesignatures}{
- \vspace*{\fill}
- \begin{tabularx}{\textwidth}{@{}llcC@{}}
-  Erstellt: & \@creatorname & & \\
-  \midrule
-  & (\@creatorrole) & Datum & Unterschrift \\
-  & & & \\
-  & & & \\
-  & & & \\
-  Gepr\"uft: & \@examinername & & \\
-  \midrule
-  & (\@examinerrole) & Datum & Unterschrift \\
-  & & & \\
-  & & & \\
-  & & & \\
-  Genehmigt: & \@releasename & & \\
-  \midrule
-  & (\@releaserole) & Datum & Unterschrift \\
- \end{tabularx}
- \newpage
- \cleardoubleemptypage
-}
-
-
-%% contact page
-\newcommand{\makecontact}{
- \textbf{Kontaktadresse}
-
- Technische Universit\"at Berlin \\
- Fakult\"at Transport- und Maschinensysteme \\
- Institut f\"ur Luft- und Raumfahrt \\
- Fachgebiet Raumfahrttechnik
-
- Marchstra{\ss}e 12 - 14 \\
- 10587 Berlin \\
- Deutschland
-
- Telefon: +49 (0)30 314-21305 \\
- Telefax: +49 (0)30 314-21306
-
- \url{http://www.raumfahrttechnik.tu-berlin.de}
+ \textbf{\@approvedby}
  \newpage
  \cleardoubleemptypage
 }
