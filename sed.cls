@@ -17,7 +17,7 @@
 % required packages
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
-\RequirePackage[american,ngerman]{babel}
+\RequirePackage[english,ngerman]{babel}
 
 % \PrerenderUnicode{ä}
 % \PrerenderUnicode{ö}
